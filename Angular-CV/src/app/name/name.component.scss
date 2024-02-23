@@ -1,0 +1,21 @@
+.inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  margin: 15px;
+}
+
+textarea {
+  margin: 15px;
+  width: 20%;
+  text-align: left;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
