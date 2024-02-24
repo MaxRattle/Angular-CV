@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NameComponent } from './name/name.component';
 import { AboutComponent } from './about/about.component';
@@ -26,4 +26,10 @@ import { EditModeService } from './edit-mode.service';
 })
 export class AppComponent {
   title = 'Angular-CV';
+  constructor(
+    @Inject(EditModeService) private editModeService: EditModeService
+  ) {}
+  toggleEditMode(): void {
+    this.editModeService.toggleEditMode();
+  }
 }

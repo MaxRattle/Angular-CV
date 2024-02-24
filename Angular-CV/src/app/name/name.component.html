@@ -1,13 +1,23 @@
-<h2>Блок Имя/Фамилия/Должность</h2>
-<div class="inputs">
-    <input type="text" [value]="name" [placeholder]="hint_name">
-    <input type="text" [value]="surname" [placeholder]="hint_surname">
-    <input type="text" [value]="position" [placeholder]="hint_position">
+<h2 *ngIf="!editMode">Блок Имя/Фамилия/Должность</h2>
+<div class="inputs" *ngIf="!editMode">
+    <input [(ngModel)]="name"  type="text"  [placeholder]="hint_name">
+    <input  type="text" [(ngModel)]="surname" [placeholder]="hint_surname">
+    <input  type="text" [(ngModel)]="position" [placeholder]="hint_position">
 </div>
-<h2>Блок связи с вами</h2>
-<div class="inputs">
-    <textarea type="text" [value]="mail" [placeholder]="hint_mail"></textarea>
-    <textarea type="text" [value]="phone" [placeholder]="hint_phone"></textarea>
-    <textarea type="text" [value]="telegram" [placeholder]="hint_telegram"></textarea>
-    <textarea type="text" [value]="location" [placeholder]="hint_location"></textarea>
+<!--  -->
+<p *ngIf="editMode">{{name}} {{surname}} {{position}}</p>
+<!--  -->
+<h2 *ngIf="!editMode">Блок связи с вами</h2>
+<div class="inputs" *ngIf="!editMode">
+    <textarea type="text" [(ngModel)]="mail" [placeholder]="hint_mail"></textarea>
+    <textarea type="text" [(ngModel)]="phone" [placeholder]="hint_phone"></textarea>
+    <textarea type="text" [(ngModel)]="telegram" [placeholder]="hint_telegram"></textarea>
+    <textarea type="text" [(ngModel)]="location" [placeholder]="hint_location"></textarea>
 </div>
+<!--  -->
+<ul *ngIf="editMode">
+  <li>Почта: {{mail}}</li>
+  <li>Телефон: {{phone}}</li>
+  <li>Телеграм: {{telegram}}</li>
+  <li>Местоположение{{location}}</li>
+</ul>

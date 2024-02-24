@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormsModule, NgModel } from '@angular/forms';
+import { EditModeService } from '../edit-mode.service';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-name',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, NgIf, NgFor],
   templateUrl: './name.component.html',
   styleUrl: './name.component.scss',
 })
-export class NameComponent {
+export class NameComponent implements OnInit {
   name: string = 'Максим';
   hint_name: string = 'Ваше Имя';
   surname: string = 'Сушков';
@@ -23,4 +25,12 @@ export class NameComponent {
   hint_telegram: string = 'Ваше имя пользователя в Telegram';
   location: string = 'Россия, Приморский край, Большой Камень';
   hint_location: string = 'Ваше местоположение';
+
+  editMode: boolean = false;
+  constructor(private editeModeService: EditModeService) {}
+  ngOnInit() {
+    this.editeModeService.editMode$.subscribe((value) => {
+      this.editMode = value;
+    });
+  }
 }
