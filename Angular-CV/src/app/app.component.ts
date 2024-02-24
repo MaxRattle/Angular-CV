@@ -6,6 +6,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { EduComponent } from './edu/edu.component';
 import { ExpComponent } from './exp/exp.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { EditModeService } from './edit-mode.service';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ import { ProjectsComponent } from './projects/projects.component';
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  providers: [EditModeService],
 })
 export class AppComponent {
   title = 'Angular-CV';
