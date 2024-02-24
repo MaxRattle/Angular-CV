@@ -1,1 +1,22 @@
-<p>exp works!</p>
+<div class="container" (mouseleave)="show = false">
+  <div class="header" >
+      <h1 (mouseenter)="show = !show" >Опыт работы</h1>
+      <div class="buttons" *ngIf="show">
+          <button type="button" (click)="addNewBlock()">+</button>
+          <button type="button" (click)="removeNewBlock()">-</button>
+      </div>
+  </div>
+  <div>
+    <textarea [value]="name" [placeholder]="hint_name"></textarea>
+    <textarea [value]="position" [placeholder]="hint_position"></textarea>
+    <textarea [value]="achievement" [placeholder]="hint_achievement"></textarea>
+  </div>
+
+  <div *ngFor="let block of blockService.block">
+    <div>
+        <textarea [value]="" [placeholder]=""></textarea>
+        <textarea [value]="" [placeholder]=""></textarea>
+        <textarea [value]="" [placeholder]=""></textarea>
+    </div>
+  </div>
+</div>
