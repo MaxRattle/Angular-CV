@@ -12,11 +12,11 @@ import { EditModeService } from '../edit-mode.service';
 })
 export class ProjectsComponent {
   first: string =
-    '1. ConceptVid - сайт для просмотра кино (HTML, SCSS, Angular 17, Material UI, RxJs и другие)';
+    'ConceptVid - сайт для просмотра кино (HTML, SCSS, Angular 17, Material UI, RxJs и другие)';
   second: string =
-    '2. Nonograms - интерактивная игра на основе японских кроссвордов (HTML, CSS, JS).';
+    'Nonograms - интерактивная игра на основе японских кроссвордов (HTML, CSS, JS).';
   third: string =
-    '3. Project Weather - приложение для определения погоды в городе по запросу (HTML, CSS, JS, Rest API)';
+    'Project Weather - приложение для определения погоды в городе по запросу (HTML, CSS, JS, Rest API)';
   hint: string = 'Название проекта / Стек технологий';
 
   editMode: boolean = false;

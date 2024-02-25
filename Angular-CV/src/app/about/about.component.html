@@ -2,4 +2,4 @@
 <div *ngIf="!editMode">
     <textarea type="text" [(ngModel)]="description" [placeholder]="hint_description"></textarea>
 </div>
-<div *ngIf="editMode">{{description}}</div>
+<div class="block" *ngIf="editMode">{{description}}</div>
