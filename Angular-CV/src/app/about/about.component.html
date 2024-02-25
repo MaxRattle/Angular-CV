@@ -1,4 +1,5 @@
-<div>
+<div *ngIf="!editMode">
     <h1>Обо мне</h1>
-    <textarea type="text" [value]="description" [placeholder]="hint_description"></textarea>
+    <textarea type="text" [(ngModel)]="description" [placeholder]="hint_description"></textarea>
 </div>
+<p *ngIf="editMode">{{description}}</p>

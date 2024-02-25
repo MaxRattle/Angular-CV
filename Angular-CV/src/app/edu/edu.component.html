@@ -1,9 +1,17 @@
 <h1>Образование</h1>
-<div>
-    <textarea [value]="name" [placeholder]=""></textarea>
-    <textarea [value]="faculty" [placeholder]=""></textarea>
-    <textarea [value]="city" [placeholder]=""></textarea>
-    <textarea [value]="degree" [placeholder]=""></textarea>
-    <textarea [value]="date" [placeholder]=""></textarea>
-    <textarea [value]="specialization" [placeholder]=""></textarea>
+<div *ngIf="!editMode">
+    <textarea [(ngModel)]="name" [placeholder]=""></textarea>
+    <textarea [(ngModel)]="faculty" [placeholder]=""></textarea>
+    <textarea [(ngModel)]="city" [placeholder]=""></textarea>
+    <textarea [(ngModel)]="degree" [placeholder]=""></textarea>
+    <textarea [(ngModel)]="date" [placeholder]=""></textarea>
+    <textarea [(ngModel)]="specialization" [placeholder]=""></textarea>
 </div>
+<ul *ngIf="editMode">
+  <li>{{name}}</li>
+  <li>{{faculty}}</li>
+  <li>{{city}}</li>
+  <li>{{degree}}</li>
+  <li>{{date}}</li>
+  <li>{{specialization}}</li>
+</ul>

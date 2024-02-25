@@ -1,22 +1,36 @@
 <div class="container" (mouseleave)="show = false">
-  <div class="header" >
+  <div class="header" *ngIf="!editMode">
       <h1 (mouseenter)="show = !show" >Опыт работы</h1>
       <div class="buttons" *ngIf="show">
           <button type="button" (click)="addNewBlock()">+</button>
           <button type="button" (click)="removeNewBlock()">-</button>
       </div>
   </div>
-  <div>
-    <textarea [value]="name" [placeholder]="hint_name"></textarea>
-    <textarea [value]="position" [placeholder]="hint_position"></textarea>
-    <textarea [value]="achievement" [placeholder]="hint_achievement"></textarea>
+  <div *ngIf="!editMode">
+    <textarea [(ngModel)]="name" [placeholder]="hint_name"></textarea>
+    <textarea [(ngModel)]="position" [placeholder]="hint_position"></textarea>
+    <textarea [(ngModel)]="achievement" [placeholder]="hint_achievement"></textarea>
   </div>
-
-  <div *ngFor="let block of blockService.block">
-    <div>
-        <textarea [value]="" [placeholder]=""></textarea>
-        <textarea [value]="" [placeholder]=""></textarea>
-        <textarea [value]="" [placeholder]=""></textarea>
+  <!--  -->
+  <h1 *ngIf="editMode">Опыт работы</h1>
+  <p *ngIf="editMode">{{name}}</p>
+  <p *ngIf="editMode">{{position}}</p>
+  <p *ngIf="editMode">{{achievement}}</p>
+  <!--  -->
+  <div>
+    <div *ngFor="let block of blockService.blocks; let i=index">
+      <div *ngIf="!editMode">
+          <textarea [(ngModel)]="block.name" [placeholder]="hint_name"></textarea>
+          <textarea [(ngModel)]="block.position" [placeholder]="hint_position"></textarea>
+          <textarea [(ngModel)]="block.achievement" [placeholder]="hint_achievement"></textarea>
+      </div>
+      <!--  -->
+      <div style="display: flex; flex-direction: column;" *ngIf="editMode">
+        <p>{{ block.name }}</p>
+        <p>{{ block.position }}</p>
+        <p>{{ block.achievement }}</p>
+      </div>
+      <!--  -->
     </div>
   </div>
 </div>

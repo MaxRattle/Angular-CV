@@ -1,6 +1,12 @@
 <h1>Проекты</h1>
-<div>
-    <textarea [value]="'1. '+first" [placeholder]="hint"></textarea>
-    <textarea [value]="'2. '+second" [placeholder]="hint"></textarea>
-    <textarea [value]="'3. '+third" [placeholder]="hint"></textarea>
+<div *ngIf="!editMode">
+    <textarea [(ngModel)]="first" [placeholder]="hint"></textarea>
+    <textarea [(ngModel)]="second" [placeholder]="hint"></textarea>
+    <textarea [(ngModel)]="third" [placeholder]="hint"></textarea>
+</div>
+
+<div *ngIf="editMode">
+  <p>{{'1 ' + first}}</p>
+  <p>{{'2 ' + second}}</p>
+  <p>{{'3 ' + third}}</p>
 </div>

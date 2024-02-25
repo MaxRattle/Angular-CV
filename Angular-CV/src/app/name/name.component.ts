@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule, NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { EditModeService } from '../edit-mode.service';
-import { NgFor, NgIf } from '@angular/common';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-name',
   standalone: true,
-  imports: [FormsModule, NgIf, NgFor],
+  imports: [FormsModule, NgIf],
   templateUrl: './name.component.html',
   styleUrl: './name.component.scss',
 })
