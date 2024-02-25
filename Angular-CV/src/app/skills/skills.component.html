@@ -1,5 +1,5 @@
-<h1>Навыки</h1>
+<h2>Навыки</h2>
 <div *ngIf="!editMode">
     <textarea [(ngModel)]="skills" [placeholder]="hint_skills"></textarea>
 </div>
-<p *ngIf="editMode">{{skills}}</p>
+<div *ngIf="editMode">{{skills}}</div>

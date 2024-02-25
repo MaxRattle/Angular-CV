@@ -1,6 +1,6 @@
 <div class="container" (mouseleave)="show = false">
   <div class="header" *ngIf="!editMode">
-      <h1 (mouseenter)="show = !show" >Опыт работы</h1>
+      <h2 (mouseenter)="show = !show" >Опыт работы</h2>
       <div class="buttons" *ngIf="show">
           <button type="button" (click)="addNewBlock()">+</button>
           <button type="button" (click)="removeNewBlock()">-</button>
@@ -12,7 +12,7 @@
     <textarea [(ngModel)]="achievement" [placeholder]="hint_achievement"></textarea>
   </div>
   <!--  -->
-  <h1 *ngIf="editMode">Опыт работы</h1>
+  <h2 class="head" *ngIf="editMode">Опыт работы</h2>
   <p *ngIf="editMode">{{name}}</p>
   <p *ngIf="editMode">{{position}}</p>
   <p *ngIf="editMode">{{achievement}}</p>

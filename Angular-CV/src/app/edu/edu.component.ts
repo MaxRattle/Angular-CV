@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 export class EduComponent {
   name: string = 'Дальневосточный Федеральный Университет';
   hint_name: string = 'Название учебного заведения';
-  faculty: string = 'Политехнический институт,';
+  faculty: string = 'Политехнический институт';
   hint_faculty: string = 'Название факультета';
   city: string = 'Владивосток';
   hint_city: string = 'Местоположение учебного заведения';

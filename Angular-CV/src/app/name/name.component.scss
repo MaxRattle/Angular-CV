@@ -1,15 +1,20 @@
-.inputs {
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.area {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 input {
   margin: 15px;
+  width: 33.3%;
 }
 
 textarea {
   margin: 15px;
-  width: 10%;
+  width: 25%;
   text-align: left;
 }
 
@@ -18,4 +23,23 @@ h2 {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+}
+
+.head {
+  margin-top: 15px;
+}
+//
+
+h3 {
+  padding-left: 15px;
+}
+
+ul {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}
+li {
+  margin: 5px;
 }
