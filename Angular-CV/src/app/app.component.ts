@@ -7,6 +7,7 @@ import { EduComponent } from './edu/edu.component';
 import { ExpComponent } from './exp/exp.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { EditModeService } from './edit-mode.service';
+import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -19,17 +20,19 @@ import { EditModeService } from './edit-mode.service';
     EduComponent,
     ExpComponent,
     ProjectsComponent,
+    NgStyle,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   providers: [EditModeService],
 })
 export class AppComponent {
-  title = 'Angular-CV';
+  isEditMode: boolean = false;
   constructor(
     @Inject(EditModeService) private editModeService: EditModeService
   ) {}
   toggleEditMode(): void {
+    this.isEditMode = !this.isEditMode;
     this.editModeService.toggleEditMode();
   }
 }
