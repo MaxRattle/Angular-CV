@@ -1,0 +1,5 @@
+<h2>Навыки</h2>
+<div *ngIf="!editMode">
+    <textarea [(ngModel)]="skills" [placeholder]="hint_skills"></textarea>
+</div>
+<div class="block" *ngIf="editMode">{{skills}}</div>

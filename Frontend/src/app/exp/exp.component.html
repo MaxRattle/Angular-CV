@@ -1,0 +1,38 @@
+<div class="container" (mouseleave)="show = false">
+  <div class="header" *ngIf="!editMode">
+      <h2 (mouseenter)="show = !show" >Опыт работы</h2>
+      <div class="buttons" *ngIf="show">
+          <button type="button" (click)="addNewBlock()">+</button>
+          <button type="button" (click)="removeNewBlock()">-</button>
+      </div>
+  </div>
+  <div class="flexbox"  *ngIf="!editMode">
+    <textarea [(ngModel)]="name" [placeholder]="hint_name"></textarea>
+    <textarea [(ngModel)]="position" [placeholder]="hint_position"></textarea>
+    <textarea [(ngModel)]="achievement" [placeholder]="hint_achievement"></textarea>
+  </div>
+  <!--  -->
+  <h2 class="head" *ngIf="editMode">Опыт работы</h2>
+  <div class="block red-border" *ngIf="editMode">
+    <p class="paragraph" *ngIf="editMode">{{name}}</p>
+    <p class="paragraph" *ngIf="editMode">{{position}}</p>
+    <p class="paragraph" *ngIf="editMode">{{achievement}}</p>
+  </div>
+  <!--  -->
+  <div>
+    <div *ngFor="let block of blockService.blocks; let i=index">
+      <div class="flexbox" *ngIf="!editMode">
+          <textarea [(ngModel)]="block.name" [placeholder]="hint_name"></textarea>
+          <textarea [(ngModel)]="block.position" [placeholder]="hint_position"></textarea>
+          <textarea [(ngModel)]="block.achievement" [placeholder]="hint_achievement"></textarea>
+      </div>
+      <!--  -->
+      <div class="block red-border" *ngIf="editMode">
+        <p class="paragraph">{{ block.name }}</p>
+        <p class="paragraph">{{ block.position }}</p>
+        <p class="paragraph">{{ block.achievement }}</p>
+      </div>
+      <!--  -->
+    </div>
+  </div>
+</div>

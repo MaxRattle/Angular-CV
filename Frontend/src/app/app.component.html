@@ -1,0 +1,12 @@
+
+  <span id="print-section">
+    <app-name></app-name>
+    <app-about></app-about>
+    <app-skills></app-skills>
+    <app-edu></app-edu>
+    <app-exp></app-exp>
+    <app-projects></app-projects>
+    <button class="btn preview"  [ngStyle]="{'opacity': isEditMode ? '0' : '1'}" type="button" (click)="toggleEditMode()">Превью</button>
+  </span>
+  <button printSectionId="print-section" ngxPrint class="btn print">Печать</button>
+  <button class="btn send">Отправить на почту</button>
