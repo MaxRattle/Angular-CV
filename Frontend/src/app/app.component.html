@@ -9,4 +9,7 @@
     <button class="btn preview" type="button" (click)="toggleEditMode()">Превью</button>
   </span>
   <button printSectionId="print-section" ngxPrint class="btn print">Печать</button>
-  <button class="btn send">Отправить на почту</button>
+  <mat-dialog-actions>
+    <button class="btn send" (click)="openDialog()">Отправить на почту</button>
+  </mat-dialog-actions>
+

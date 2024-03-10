@@ -9,6 +9,12 @@ import { ProjectsComponent } from './projects/projects.component';
 import { EditModeService } from './edit-mode.service';
 import { NgStyle } from '@angular/common';
 import { NgxPrintModule } from 'ngx-print';
+import { DialogBodyComponent } from './dialog-body/dialog-body.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +29,12 @@ import { NgxPrintModule } from 'ngx-print';
     ProjectsComponent,
     NgStyle,
     NgxPrintModule,
+    DialogBodyComponent,
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -31,10 +43,14 @@ import { NgxPrintModule } from 'ngx-print';
 export class AppComponent {
   isEditMode: boolean = false;
   constructor(
-    @Inject(EditModeService) private editModeService: EditModeService
+    @Inject(EditModeService) private editModeService: EditModeService,
+    private matDialog: MatDialog
   ) {}
   toggleEditMode(): void {
     this.isEditMode = !this.isEditMode;
     this.editModeService.toggleEditMode();
+  }
+  openDialog() {
+    this.matDialog.open(DialogBodyComponent);
   }
 }

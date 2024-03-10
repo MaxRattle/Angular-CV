@@ -1,0 +1,29 @@
+<mat-dialog-content>
+    <button
+        matDialogClose
+        class="btn modal"
+        mat-icon-button
+        style="float: right; position: relative; top: -10px"
+    >
+        <mat-icon>close</mat-icon>
+    </button>
+    <header>
+        <h1>Заполните форму отправки</h1>
+    </header>
+    <p>
+        <mat-form-field>
+            <input matInput placeholder="Имя">
+            <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput placeholder="Почта">
+            <mat-icon matSuffix>drafts</mat-icon>
+        </mat-form-field>
+    </p>
+    <button mat-icon-button class="btn ok" matDialogClose>Ок</button>
+</mat-dialog-content>
+<!-- <mat-dialog-content>
+    <button mat-raised-button color="red">Save</button>
+</mat-dialog-content> -->
